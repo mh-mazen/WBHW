@@ -147,14 +147,19 @@
     <Content Include="Pages\Donation\List.aspx" />
     <Content Include="Pages\Homes\Details.aspx" />
     <Content Include="Pages\Homes\List.aspx" />
+    <Content Include="Pages\Homes\Manage\ManageAdd.aspx" />
+    <Content Include="Pages\Homes\Manage\ManageEdit.aspx" />
     <Content Include="Pages\Homes\Manage\ManageList.aspx" />
     <Content Include="Pages\Reports\List.aspx" />
     <Content Include="Pages\Requirements\Add.aspx" />
-    <Content Include="Pages\Users\Manage\UserList.aspx" />
+    <Content Include="Pages\Users\Manage\ManageAdd.aspx" />
+    <Content Include="Pages\Users\Manage\ManageEdit.aspx" />
+    <Content Include="Pages\Users\Manage\ManageList.aspx" />
     <Content Include="Photos\ORF-1.JPG" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\FileHelper.cs" />
     <Compile Include="Code\Roles\RoleManagment.cs" />
     <Compile Include="Database\DatabaseHelper.cs" />
     <Compile Include="Database\Handlers\DatabaseCommands.cs" />
@@ -208,6 +213,20 @@
     <Compile Include="Pages\Homes\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Homes\Manage\ManageAdd.aspx.cs">
+      <DependentUpon>ManageAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Homes\Manage\ManageAdd.aspx.designer.cs">
+      <DependentUpon>ManageAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Homes\Manage\ManageEdit.aspx.cs">
+      <DependentUpon>ManageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Homes\Manage\ManageEdit.aspx.designer.cs">
+      <DependentUpon>ManageEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Homes\Manage\ManageList.aspx.cs">
       <DependentUpon>ManageList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,12 +249,26 @@
     <Compile Include="Pages\Requirements\Add.aspx.designer.cs">
       <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Users\Manage\UserList.aspx.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
+    <Compile Include="Pages\Users\Manage\ManageAdd.aspx.cs">
+      <DependentUpon>ManageAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Users\Manage\UserList.aspx.designer.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
+    <Compile Include="Pages\Users\Manage\ManageAdd.aspx.designer.cs">
+      <DependentUpon>ManageAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users\Manage\ManageEdit.aspx.cs">
+      <DependentUpon>ManageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Users\Manage\ManageEdit.aspx.designer.cs">
+      <DependentUpon>ManageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users\Manage\ManageList.aspx.cs">
+      <DependentUpon>ManageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Users\Manage\ManageList.aspx.designer.cs">
+      <DependentUpon>ManageList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

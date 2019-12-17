@@ -19,7 +19,7 @@ namespace OrphansHome
             {
                 ShowUserMenu(true);
                 LoginUserNameLabel.Text = user.FullName;
-                userMenuRepeater.DataSource = RoleManagment.GetRoles(user.RoleName);
+                userMenuRepeater.DataSource = RoleManagment.GetRoles(user.RoleName).Where(x => x.InList == true);
                 userMenuRepeater.DataBind();
             }
             else

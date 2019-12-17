@@ -11,7 +11,7 @@ namespace OrphansHome.Database
     public class DatabaseHelper
     {
         // source : https://devblogs.microsoft.com/csharpfaq/how-do-i-calculate-a-md5-hash-from-a-string/
-        private static string CalculateMD5Hash(string input)
+        public static string CalculateMD5Hash(string input)
         {
             MD5 md5 = MD5.Create();
             byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
@@ -47,6 +47,18 @@ namespace OrphansHome.Database
         {
             return DatabaseCommands.Select(new User { UID = uid });
         }
+        public static bool User_Add(User user)
+        {
+            return DatabaseCommands.Insert(user);
+        }
+        public static List<User> User_GetAll()
+        {
+            return DatabaseCommands.Select(false);
+        }
+        public static bool User_Manager_Free()
+        {
+            return DatabaseCommands.Select(0) > 0;
+        }
         public static List<Requirements> Requirement_GetAll(int oid)
         {
             return DatabaseCommands.Select(new Orphanage { OID = oid });
@@ -60,6 +72,10 @@ namespace OrphansHome.Database
             requirements.OID = DatabaseCommands.Select(0, uid).OID;
             return DatabaseCommands.Insert(requirements);
         }
+        public static bool Orphanage_Add(Orphanage orphanage)
+        {
+            return DatabaseCommands.Insert(orphanage);
+        }
         public static List<Donation> Donation_GetAll(int mid)
         {
             return DatabaseCommands.Select(new User { UID = mid }, false);
@@ -67,6 +83,14 @@ namespace OrphansHome.Database
         public static bool Donation_SetDone(int did, bool done)
         {
             return DatabaseCommands.Update(new Donation { IsCollected = done, DID = did });
+        }
+        public static bool Orphanage_Update(Orphanage orphanage)
+        {
+            return DatabaseCommands.Update(orphanage);
+        }
+        public static bool User_Update(User user)
+        {
+            return DatabaseCommands.Update(user);
         }
     }
 }
